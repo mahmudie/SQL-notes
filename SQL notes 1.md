@@ -1,7 +1,6 @@
 
-#### This lists mainly focusses on the following clauses:
+#### This list mainly focusses on the following clauses:
   *. Count Function
-  
   *. DISTINCT Clause
   
   *. Sum Function
