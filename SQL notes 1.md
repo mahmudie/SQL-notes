@@ -24,33 +24,76 @@ To complete and work with the codes and examples, we will use the data available
 * **Aggregate functions (Count,sum, average, minimum, maximum)**
 An aggregate function summarizes or groups the values of rows and then returns a single value. All agregate functions ignore null values except for COUNT as COUNT(*). Aggregate functions are often used with the GROUP BY clause of the SELECT statement when showing the result per group.
 
-### Count():
-### Return the total number of records 
+### COUNT():
+#### Return the total number of records 
 
 ``` sql
 SELECT COUNT(*) FROM GenderPay;
 ``` 
  
-### Return number of Non Null values over a column (bonus)
+#### Return number of Non Null values over a column (bonus)
  
 ``` sql
 SELECT COUNT(bonus) FROM GenderPay;
 ```
-### Return number of distinct Non Null values over a column (Gender)
-#### GROUP BY NOT NEEDED
+#### Return number of distinct Non Null values over a column (Gender)
 ```` sql
  SELECT COUNT(DISTINCT Gender) as Gender from GenderPay;
 `````
 
 ### SUM(): 
-### Sum all Non Null values of Column base_pay
+#### Sum all Non Null values of Column base_pay
 
 ```` sql
  SELECT SUM(base_pay) as total from GenderPay;
 ````
-### Sum of all distinct Non-Null values pf base_pay if any
+#### Sum of all distinct Non-Null values pf base_pay if any
 
 ```` sql
  SELECT SUM(DISTINCT base_pay) as total from GenderPay;
 ````
 
+### AVG():
+#### Finds/calculates the average of a numerical column for example (base_pay) in our case
+
+```` sql
+SELECT AVG(base_pay) as average from GenderPay;
+or
+SELECT SUM(base_pay) / COUNT(base_pay) AS average from GenderPay;
+
+````
+#### Finds/calculates the average of distinct of (base_pay)
+
+```` sql
+SELECT AVG(DISTINCT base_pay) as average from GenderPay;
+or
+SELECT SUM(DISTINCT base_pay) / COUNT(DISTINCT base_pay) AS average from GenderPay;
+
+````
+
+### MIN():
+#### Returns the minimum value in the bonus column except NULL
+```` sql
+SELECT MIN(bonus) as min from GenderPay;
+```` 
+
+### MAX():
+#### Returns the maximum value in the bonus column
+```` sql
+SELECT MAX(DISTINCT bonus) as min from GenderPay;
+
+````
+### combined statements
+```` sql
+SELECT 
+COUNT(*) as records, 
+COUNT(DISTINCT department) as departments,
+SUM(base_pay) as total_pay,
+AVG(base_pay) as average_pay,
+MIN(base_pay) as min_pay,
+MAX(base_pay) as max_pay
+FROM GenderPay;
+
+````
+##### Result
+![image](https://github.com/ms4hafiz/SQL-notes/assets/20435849/e9d7b2f6-0d93-4be1-8c08-e11ea5dcd459)
