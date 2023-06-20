@@ -19,7 +19,20 @@ To complete and work with the codes and examples, we will use the data available
 |Graphic Designer|	Male|	26|	5|	Masters	|Engineering|	5	|99464|	9319|
 
 
+### Let's get started
 
 * **Aggregate functions (Count,sum, average, minimum, maximum)**
+An aggregate function summarizes or groups the values of rows and then returns a single value. Except for COUNT(*), aggregate functions ignore null values. Aggregate functions are often used with the GROUP BY clause of the SELECT statement when showing the result per group.
 ----
+### To return the total number of records 
+
+``` sql
+SELECT COUNT(*) FROM GenderPay;
+``` 
+ 
+## SQL to be ignored
+ 
+```
+SELECT * FROM EMP JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO;
+```
 
