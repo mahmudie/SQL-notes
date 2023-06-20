@@ -42,4 +42,15 @@ SELECT COUNT(bonus) FROM GenderPay;
  SELECT COUNT(DISTINCT Gender) as Gender from GenderPay;
 `````
 
+### SUM(): 
+### Sum all Non Null values of Column base_pay
+
+```` sql
+ SELECT SUM(base_pay) as total from GenderPay;
+````
+### Sum of all distinct Non-Null values pf base_pay if any
+
+```` sql
+ SELECT SUM(DISTINCT base_pay) as total from GenderPay;
+````
 
