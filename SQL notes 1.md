@@ -22,7 +22,7 @@ To complete and work with the codes and examples, we will use the data available
 ### Let's get started
 
 * **Aggregate functions (Count,sum, average, minimum, maximum)**
-An aggregate function summarizes or groups the values of rows and then returns a single value. All agregate functions ignore null values except for COUNT(). Aggregate functions are often used with the GROUP BY clause of the SELECT statement when showing the result per group.
+An aggregate function summarizes or groups the values of rows and then returns a single value. All agregate functions ignore null values except for COUNT as COUNT(*). Aggregate functions are often used with the GROUP BY clause of the SELECT statement when showing the result per group.
 ----
 ### Return the total number of records 
 
@@ -35,4 +35,10 @@ SELECT COUNT(*) FROM GenderPay;
 ``` sql
 SELECT COUNT(bonus) FROM GenderPay;
 ```
+### Return number of distinct Non Null values over a column (Gender)
+#### GROUP BY NOT NEEDED
+```` sql
+ SELECT COUNT(DISTINCT Gender) as Gender from GenderPay;
+`````
+
 
