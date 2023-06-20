@@ -1,11 +1,7 @@
 
 #### This list mainly focuses on the following clauses:
-  * Count Function
+  * Aggregate functions (Count,sum, average, minimum, maximum)
   * DISTINCT Clause
-  * Sum Function
-  * Average Function
-  * Minimum Function
-  * Maximum Function
   * ORDER BY
   * GROUP BY
   * ALL and ANY Clause
