@@ -1,5 +1,5 @@
 
-####This list mainly focuses on the following functions and clauses:
+### This list mainly focuses on the following functions and clauses:
   * Aggregate functions (Count,sum, average, minimum, maximum)
   * DISTINCT Clause
   * ORDER BY Clause
