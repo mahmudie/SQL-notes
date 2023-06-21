@@ -2,13 +2,13 @@
 ### This list mainly focuses on the following functions and clauses:
   * [Aggregate functions (Count,sum, average, minimum, maximum)](./SQL-Aggregate-functions-clauses.md#aggregate-functions-countsum-avg-min-max)
   * [DISTINCT Clause](./SQL-Aggregate-functions-clauses.md#distinct-clause)
-  * ORDER BY Clause
+  * ORDER BY and HAVING Clause
   * GROUP BY Clause
   * ALL and ANY Clause
   * TOP Clause
 
 #### Setting up the environment
-To complete and work with the codes and examples, we will use the data available [here](https://github.com/ms4hafiz/SQL-notes/blob/main/GenderPay.sql). It is a SQL code file that creates a table named "**GenderPay**".  The dataset contains total 1000 recrods 5 of which are listed as samples in the following table:
+To complete and work with the codes and examples, we will use the data available [here](https://github.com/ms4hafiz/SQL-notes/blob/main/GenderPay.sql). It is a SQL code file that creates a table named "**GenderPay**".  The dataset contains total 1000 records 5 of which are listed as samples in the following table:
 
 |job_title     |gender    |age    |score     |education    |department    | seniority  | base_pay   | bonus  |
 |:-------------|----------|------:|---------:|-------------|--------------|-----------:|-----------:|-------:|
@@ -22,7 +22,7 @@ To complete and work with the codes and examples, we will use the data available
 ### Let's get started
 
 * ## **Aggregate functions (Count,sum, avg, min, max)**
-An aggregate function summarizes or groups the values of rows and then returns a single value. All agregate functions ignore null values except for COUNT as COUNT(*). Aggregate functions are often used with the GROUP BY clause of the SELECT statement when showing the result per group.
+An aggregate function summarizes or groups the values of rows and then returns a single value. All aggregate functions ignore null values except for COUNT as COUNT(*). Aggregate functions are often used with the GROUP BY clause of the SELECT statement when showing the result per group.
 
 ### COUNT():
 #### Return the total number of records 
@@ -132,3 +132,45 @@ SELECT DISTINCT gender, education FROM GenderPay;
 
 ### How the DISTINCT Clause handles NULL Values?
 The DISTINCT clause considers a NULL as separate and unique value.
+
+### DISTINCT Clause
+The ORDER BY in SQL is used to sort the fetched data in either ascending (**ASC**) or descending (**DESC**) based on one or more columns. 
+
+* By default ORDER BY sorts the data in ascending order (ASC).
+* We can use the keyword DESC to sort the data in descending order and the keyword ASC to sort in ascending order.
+
+#### Sort by one column
+
+ To sort in ascending or descending order we can use the keywords ASC or DESC respectively as shown in the following syntax:
+ **Note** that the ASC and DESC can be used together with different columns and comes after the column(s)
+ ```` sql
+ SELECT * FROM table_name ORDER BY column_name ASC | DESC
+ ````
+ Example:
+ ```` sql
+ SELECT job_title, gender, education FROM GenderPay
+ ORDER BY  job_title ASC ; 
+ ````
+ 
+ ### Sort by multiple columns
+ In this way we can select two or more columns or all (*) columns
+ #### Syntax:
+ 
+ ``` sql
+ SELECT * FROM table_name ORDER BY column1 ASC|DESC , column2 ASC|DESC
+ ````
+ 
+ Following example selects all columsn by using ****** and then sorts by job_title in ascending order, and then sorts the education in descending order.
+ 
+ ```` sql
+SELECT * FROM GenderPay
+ORDER BY  job_title ASC, education DESC ; 
+ ````
+ ### Sorting By Column Number (instead of name)
+ It is also possible to sort based on the column number instead of using name of column. 1 refers to the first column in the table, 2 refers to the second column, and so on.
+ 
+ ```` sql
+ SELECT * from GenderPay 
+ ORDER BY 1 DESC;
+ ````
+ 
