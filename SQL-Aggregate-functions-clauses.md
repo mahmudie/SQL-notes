@@ -133,7 +133,7 @@ SELECT DISTINCT gender, education FROM GenderPay;
 ### How the DISTINCT Clause handles NULL Values?
 The DISTINCT clause considers a NULL as separate and unique value.
 
-### DISTINCT Clause
+### ORDER BY Clause
 The ORDER BY in SQL is used to sort the fetched data in either ascending (**ASC**) or descending (**DESC**) based on one or more columns. 
 
 * By default ORDER BY sorts the data in ascending order (ASC).
