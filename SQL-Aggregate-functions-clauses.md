@@ -8,7 +8,7 @@
   * TOP Clause
 
 #### Setting up the environment
-To complete and work with the codes and examples, we will use the data available [here](https://github.com/ms4hafiz/SQL-notes/blob/main/GenderPay.sql). It is a SQL code file that creates a table named "**GenderPay**".  The dataset contains total 1000 records 5 of which are listed as samples in the following table:
+To complete and work with the codes and examples, we will use the data available [here](https://github.com/ms4hafiz/SQL-notes/blob/main/GenderPay.sql). It is a SQL code file that creates a table named "**GenderPay**".  The dataset contains total 1000 recrods 5 of which are listed as samples in the following table:
 
 |job_title     |gender    |age    |score     |education    |department    | seniority  | base_pay   | bonus  |
 |:-------------|----------|------:|---------:|-------------|--------------|-----------:|-----------:|-------:|
@@ -22,7 +22,7 @@ To complete and work with the codes and examples, we will use the data available
 ### Let's get started
 
 * ## **Aggregate functions (Count,sum, avg, min, max)**
-An aggregate function summarizes or groups the values of rows and then returns a single value. All aggregate functions ignore null values except for COUNT as COUNT(*). Aggregate functions are often used with the GROUP BY clause of the SELECT statement when showing the result per group.
+An aggregate function summarizes or groups the values of rows and then returns a single value. All agregate functions ignore null values except for COUNT as COUNT(*). Aggregate functions are often used with the GROUP BY clause of the SELECT statement when showing the result per group.
 
 ### COUNT():
 #### Return the total number of records 
