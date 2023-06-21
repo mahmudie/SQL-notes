@@ -1,7 +1,7 @@
 
 ### This list mainly focuses on the following functions and clauses:
-  * [Aggregate functions (Count,sum, average, minimum, maximum)](~/#aggregate-functions-countsum-avg-min-max)
-  * [DISTINCT Clause](~/#distinct-clause)
+  * [Aggregate functions (Count,sum, average, minimum, maximum)](./SQL-Aggregate-functions-clauses.md#aggregate-functions-countsum-avg-min-max)
+  * [DISTINCT Clause](./SQL-Aggregate-functions-clauses.md#distinct-clause)
   * ORDER BY Clause
   * GROUP BY Clause
   * ALL and ANY Clause
