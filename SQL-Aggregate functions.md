@@ -1,7 +1,7 @@
 
 ### This list mainly focuses on the following functions and clauses:
-  * [Aggregate functions (Count,sum, average, minimum, maximum)](https://github.com/ms4hafiz/SQL-notes/edit/main/SQL-Aggregate%20functions.md#aggregate-functions-countsum-avg-min-max))
-  * [DISTINCT Clause](https://github.com/ms4hafiz/SQL-notes/edit/main/SQL-Aggregate%20functions.md#distinct-clause)
+  * [Aggregate functions (Count,sum, average, minimum, maximum)](https://github.com/ms4hafiz/SQL-notesSQL-Aggregate%20functions.md#aggregate-functions-countsum-avg-min-max))
+  * [DISTINCT Clause](https://github.com/ms4hafiz/SQL-notes/SQL-Aggregate%20functions.md#distinct-clause)
   * ORDER BY Clause
   * GROUP BY Clause
   * ALL and ANY Clause
