@@ -1,4 +1,5 @@
 
+## SQL Aggregate functions, DISTINCT, ORDER BY, GROUP BY, ALL, ANY, and TOP clauses
 ### This list mainly focuses on the following functions and clauses:
   * [Aggregate functions (Count,sum, average, minimum, maximum)](./SQL-Aggregate-functions-clauses.md#aggregate-functions-countsum-avg-min-max)
   * [DISTINCT Clause](./SQL-Aggregate-functions-clauses.md#distinct-clause)
@@ -99,7 +100,7 @@ FROM GenderPay;
 ![image](https://github.com/ms4hafiz/SQL-notes/assets/20435849/e9d7b2f6-0d93-4be1-8c08-e11ea5dcd459)
 
 
-### DISTINCT Clause
+## DISTINCT Clause
 DISTINCT clause is useful when there is  a need to avoid the double counting of a value in a column. DISTINCT is used in conjunction with SELECT and can be useful when used with aggregate functions.
 
 #### Syntax : 
@@ -133,7 +134,7 @@ SELECT DISTINCT gender, education FROM GenderPay;
 ### How the DISTINCT Clause handles NULL Values?
 The DISTINCT clause considers a NULL as separate and unique value.
 
-### ORDER BY Clause
+## ORDER BY Clause
 The ORDER BY in SQL is used to sort the fetched data in either ascending (**ASC**) or descending (**DESC**) based on one or more columns. 
 
 * By default ORDER BY sorts the data in ascending order (ASC).
@@ -173,4 +174,5 @@ ORDER BY  job_title ASC, education DESC ;
  SELECT * from GenderPay 
  ORDER BY 1 DESC;
  ````
- 
+
+###  
