@@ -1,7 +1,7 @@
 
 ### This list mainly focuses on the following functions and clauses:
-  * Aggregate functions (Count,sum, average, minimum, maximum)
-  * DISTINCT Clause
+  * [Aggregate functions (Count,sum, average, minimum, maximum)](https://github.com/ms4hafiz/SQL-notes/edit/main/SQL-Aggregate%20functions.md#aggregate-functions-countsum-avg-min-max))
+  * [DISTINCT Clause](https://github.com/ms4hafiz/SQL-notes/edit/main/SQL-Aggregate%20functions.md#distinct-clause)
   * ORDER BY Clause
   * GROUP BY Clause
   * ALL and ANY Clause
@@ -21,7 +21,7 @@ To complete and work with the codes and examples, we will use the data available
 
 ### Let's get started
 
-* **Aggregate functions (Count,sum, average, minimum, maximum)**
+* ## **Aggregate functions (Count,sum, avg, min, max)**
 An aggregate function summarizes or groups the values of rows and then returns a single value. All agregate functions ignore null values except for COUNT as COUNT(*). Aggregate functions are often used with the GROUP BY clause of the SELECT statement when showing the result per group.
 
 ### COUNT():
@@ -97,3 +97,38 @@ FROM GenderPay;
 ````
 ##### Result
 ![image](https://github.com/ms4hafiz/SQL-notes/assets/20435849/e9d7b2f6-0d93-4be1-8c08-e11ea5dcd459)
+
+
+### DISTINCT Clause
+DISTINCT clause is useful when there is  a need to avoid the double counting of a value in a column. DISTINCT is used in conjunction with SELECT and can be useful when used with aggregate functions.
+
+#### Syntax : 
+```` sql
+SELECT DISTINCT column1, column2 FROM table_name
+````
+
+#### Returning list of departments from the give table
+```` sql
+SELECT DISTINCT department FROM GenderPay;
+````
+The above SQL statement returns the following six departments but it would have returned all records (100 records) without using DISTINCT.
+|department  |
+|------------|
+|Sales|
+|Engineering|
+|Administration|
+|Operations|
+|Management|
+
+#### To return a unique record of a combination of columns or whole, the following SQL query would help
+```` sql
+SELECT DISTINCT * FROM GenderPay;
+````
+or the following which will retun unique combination of Gender and Education.
+```` sql
+SELECT DISTINCT gender, education FROM GenderPay; 
+````
+![image](https://github.com/ms4hafiz/SQL-notes/assets/20435849/9a23876b-1689-46b1-9f09-f174a7c0f002)
+
+### How the DISTINCT Clause handles NULL Values?
+The DISTINCT clause considers a NULL as separate and unique value.
