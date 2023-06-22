@@ -209,3 +209,37 @@ GROUP BY gender;
 |--------------| ------------:|
 |   Male    |    3437323   |   
 |   Female    |    3030121   |   
+
+### HAVING clause:
+The HAVING clause is used to filter the results of a GROUP BY query based on a condition. It is similar to the WHERE clause, but it operates only on the result of GROUP BY query rather than individual rows.
+
+#### Syntax:
+Following is the general syntax for using HAVING with GROUP BY query
+```` sql
+SELECT column1, function_name(column2) -- select satement
+FROM table_name -- FROM clause
+WHERE condition -- where condition to filter specific rows when needed
+GROUP BY column1 -- group by on column1 but more columns can be added
+HAVING condition -- Having used to filter the result of the GROUP BY clause
+````
+#### Example
+In the following example, the query will display only those job_titles with over 650000 bonus in total. Please see the [result](./SQL-Aggregate-functions-clauses.md#result-1) of first example of GROUP BY above. Then compare the new result after applying HAVING. 
+```` sql
+SELECT 
+    Job_title, 
+    sum(bonus) as total         from payments
+GROUP BY 
+    Job_title
+HAVING 
+    sum(bonus)>650000
+````
+
+|  Job Title     |   Total Bonus |
+|----------------| -------------:|
+|   Financial Analyst    |    685522   |   
+|   Marketing Associate    |    725199   |   
+|   Warehouse Associate    |    651809   |   
+|   Data Scientist    |    693894   |   
+|   Graphic Designer    |    664636   |   
+|   Software Engineer    |    724466   |   
+
