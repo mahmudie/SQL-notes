@@ -223,7 +223,7 @@ GROUP BY column1 -- group by on column1 but more columns can be added
 HAVING condition -- Having used to filter the result of the GROUP BY clause
 ````
 #### Example
-In the following example, the query will display only those job_titles with over 650000 bonus in total. Please see the [result](./SQL-Aggregate-functions-clauses.md#result-1) of first example of GROUP BY above. Then compare the new result after applying HAVING. 
+In the following example, the query will display only those job_titles with over 650000 bonus in total. Please see the [result](./SQL-Aggregate-functions-clauses.md#result-1) of first example of GROUP BY above. Then compare the new result after applying HAVING. Find out which of the job titles are excluded. 
 ```` sql
 SELECT 
     Job_title, 
