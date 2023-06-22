@@ -1,15 +1,15 @@
 
 ## SQL Aggregate functions, DISTINCT, ORDER BY, GROUP BY, ALL, ANY, and TOP clauses
 ### This list mainly focuses on the following functions and clauses:
-  * [Aggregate functions (Count,sum, average, minimum, maximum)](./SQL-Aggregate-functions-clauses.md#aggregate-functions-countsum-avg-min-max)
-  * [DISTINCT Clause](./SQL-Aggregate-functions-clauses.md#distinct-clause)
-  * ORDER BY and HAVING Clause
-  * GROUP BY Clause
-  * ALL and ANY Clause
-  * TOP Clause
+  1.  [Aggregate functions (Count,sum, average, minimum, maximum)](./SQL-Aggregate-functions-clauses.md#aggregate-functions-countsum-avg-min-max)
+  2.  [DISTINCT Clause](./SQL-Aggregate-functions-clauses.md#distinct-clause)
+  3.  ORDER BY and HAVING Clause
+  4.  GROUP BY Clause
+  5.  ALL and ANY Clause
+  6.  TOP Clause
 
 #### Setting up the environment
-To complete and work with the codes and examples, we will use the data available [here](https://github.com/ms4hafiz/SQL-notes/blob/main/GenderPay.sql). It is a SQL code file that creates a table named "**GenderPay**".  The dataset contains total 1000 records 5 of which are listed as samples in the following table:
+To complete and work with the codes and examples, we will use the data available [here](https://github.com/ms4hafiz/SQL-notes/blob/main/payments.sql). It is a SQL code file that creates a table named "**payments**".  The dataset contains total 1000 records 5 of which are listed as samples in the following table:
 
 |job_title     |gender    |age    |score     |education    |department    | seniority  | base_pay   | bonus  |
 |:-------------|----------|------:|---------:|-------------|--------------|-----------:|-----------:|-------:|
@@ -29,59 +29,59 @@ An aggregate function summarizes or groups the values of rows and then returns a
 #### Return the total number of records 
 
 ``` sql
-SELECT COUNT(*) FROM GenderPay;
+SELECT COUNT(*) FROM payments;
 ``` 
  
 #### Return number of Non Null values over a column (bonus)
  
 ``` sql
-SELECT COUNT(bonus) FROM GenderPay;
+SELECT COUNT(bonus) FROM payments;
 ```
 #### Return number of distinct Non Null values over a column (Gender)
 ```` sql
- SELECT COUNT(DISTINCT Gender) as Gender from GenderPay;
+ SELECT COUNT(DISTINCT Gender) as Gender from payments;
 `````
 
 ### SUM(): 
 #### Sum all Non Null values of Column base_pay
 
 ```` sql
- SELECT SUM(base_pay) as total from GenderPay;
+ SELECT SUM(base_pay) as total from payments;
 ````
 #### Sum of all distinct Non-Null values pf base_pay if any
 
 ```` sql
- SELECT SUM(DISTINCT base_pay) as total from GenderPay;
+ SELECT SUM(DISTINCT base_pay) as total from payments;
 ````
 
 ### AVG():
 #### Finds/calculates the average of a numerical column for example (base_pay) in our case
 
 ```` sql
-SELECT AVG(base_pay) as average from GenderPay;
+SELECT AVG(base_pay) as average from payments;
 or
-SELECT SUM(base_pay) / COUNT(base_pay) AS average from GenderPay;
+SELECT SUM(base_pay) / COUNT(base_pay) AS average from payments;
 
 ````
 #### Finds/calculates the average of distinct of (base_pay)
 
 ```` sql
-SELECT AVG(DISTINCT base_pay) as average from GenderPay;
+SELECT AVG(DISTINCT base_pay) as average from payments;
 or
-SELECT SUM(DISTINCT base_pay) / COUNT(DISTINCT base_pay) AS average from GenderPay;
+SELECT SUM(DISTINCT base_pay) / COUNT(DISTINCT base_pay) AS average from payments;
 
 ````
 
 ### MIN():
 #### Returns the minimum value in the bonus column except NULL
 ```` sql
-SELECT MIN(bonus) as min from GenderPay;
+SELECT MIN(bonus) as min from payments;
 ```` 
 
 ### MAX():
 #### Returns the maximum value in the bonus column
 ```` sql
-SELECT MAX(DISTINCT bonus) as min from GenderPay;
+SELECT MAX(DISTINCT bonus) as min from payments;
 
 ````
 ### combined statements
@@ -93,7 +93,7 @@ SUM(base_pay) as total_pay,
 AVG(base_pay) as average_pay,
 MIN(base_pay) as min_pay,
 MAX(base_pay) as max_pay
-FROM GenderPay;
+FROM payments;
 
 ````
 ##### Result
@@ -110,7 +110,7 @@ SELECT DISTINCT column1, column2 FROM table_name
 
 #### Returning list of departments from the give table
 ```` sql
-SELECT DISTINCT department FROM GenderPay;
+SELECT DISTINCT department FROM payments;
 ````
 The above SQL statement returns the following six departments but it would have returned all records (100 records) without using DISTINCT.
 |department  |
@@ -123,11 +123,11 @@ The above SQL statement returns the following six departments but it would have 
 
 #### To return a unique record of a combination of columns or whole, the following SQL query would help
 ```` sql
-SELECT DISTINCT * FROM GenderPay;
+SELECT DISTINCT * FROM payments;
 ````
 or the following which will retun unique combination of Gender and Education.
 ```` sql
-SELECT DISTINCT gender, education FROM GenderPay; 
+SELECT DISTINCT gender, education FROM payments; 
 ````
 ![image](https://github.com/ms4hafiz/SQL-notes/assets/20435849/9a23876b-1689-46b1-9f09-f174a7c0f002)
 
@@ -149,7 +149,7 @@ The ORDER BY in SQL is used to sort the fetched data in either ascending (**ASC*
  ````
  Example:
  ```` sql
- SELECT job_title, gender, education FROM GenderPay
+ SELECT job_title, gender, education FROM payments
  ORDER BY  job_title ASC ; 
  ````
  
@@ -164,14 +164,14 @@ The ORDER BY in SQL is used to sort the fetched data in either ascending (**ASC*
  Following example selects all columsn by using ****** and then sorts by job_title in ascending order, and then sorts the education in descending order.
  
  ```` sql
-SELECT * FROM GenderPay
+SELECT * FROM payments
 ORDER BY  job_title ASC, education DESC ; 
  ````
  ### Sorting By Column Number (instead of name)
  It is also possible to sort based on the column number instead of using name of column. 1 refers to the first column in the table, 2 refers to the second column, and so on.
  
  ```` sql
- SELECT * from GenderPay 
+ SELECT * from payments 
  ORDER BY 1 DESC;
  ````
 
@@ -180,7 +180,7 @@ The GROUP BY clause is used to group rows in a result set based on one or more c
 #### Example:
 ```` sql
 SELECT Job_title, SUM(bonus) AS TotalBonus
-FROM GenderPay
+FROM payments
 GROUP BY Job_title;
 ````
 #### Result:
@@ -201,7 +201,7 @@ The above example summarizes the total bonus paid for each position.
 The following example displays the total bonus per gender:
 ```` sql
 SELECT gender, SUM(bonus) AS TotalBonus
-FROM GenderPay
+FROM payments
 GROUP BY gender;
 ````
 #### Result:
