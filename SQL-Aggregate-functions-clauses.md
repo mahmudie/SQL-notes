@@ -227,7 +227,7 @@ In the following example, the query will display only those job_titles with over
 ```` sql
 SELECT 
     Job_title, 
-    sum(bonus) as total         from payments
+    sum(bonus) as total from payments
 GROUP BY 
     Job_title
 HAVING 
