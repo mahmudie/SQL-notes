@@ -85,12 +85,12 @@ SELECT MAX(DISTINCT bonus) as min from payments;
 ### combined statements
 ```` sql
 SELECT 
-COUNT(*) as records, 
-COUNT(DISTINCT department) as departments,
-SUM(base_pay) as total_pay,
-AVG(base_pay) as average_pay,
-MIN(base_pay) as min_pay,
-MAX(base_pay) as max_pay
+    COUNT(*) as records, 
+    COUNT(DISTINCT department) as departments,
+    SUM(base_pay) as total_pay,
+    AVG(base_pay) as average_pay,
+    MIN(base_pay) as min_pay,
+    MAX(base_pay) as max_pay
 FROM payments;
 
 ````
