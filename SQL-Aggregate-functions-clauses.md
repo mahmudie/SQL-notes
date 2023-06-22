@@ -3,10 +3,8 @@
 ### This list mainly focuses on the following functions and clauses:
   1.  [Aggregate functions (Count,sum, average, minimum, maximum)](./SQL-Aggregate-functions-clauses.md#aggregate-functions-countsum-avg-min-max)
   2.  [DISTINCT Clause](./SQL-Aggregate-functions-clauses.md#distinct-clause)
-  3.  ORDER BY and HAVING Clause
-  4.  GROUP BY Clause
-  5.  ALL and ANY Clause
-  6.  TOP Clause
+  3.  ORDER BY Clause
+  4.  GROUP BY and HAVING Clause
 
 #### Setting up the environment
 To complete and work with the codes and examples, we will use the data available [here](https://github.com/ms4hafiz/SQL-notes/blob/main/payments.sql). It is a SQL code file that creates a table named "**payments**".  The dataset contains total 1000 records 5 of which are listed as samples in the following table:
