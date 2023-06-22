@@ -175,4 +175,37 @@ ORDER BY  job_title ASC, education DESC ;
  ORDER BY 1 DESC;
  ````
 
-###  
+### GROUP BY clause:
+The GROUP BY clause is used to group rows in a result set based on one or more columns. It is commonly used with aggregate functions like SUM, COUNT, AVG, COUNT, etc. The result set is divided into groups based on the specified columns.
+#### Example:
+```` sql
+SELECT Job_title, SUM(bonus) AS TotalBonus
+FROM GenderPay
+GROUP BY Job_title;
+````
+#### Result:
+|  job_title    | Total Bonus |
+|--------       |-------------|
+|   Financial Analyst    |    685522   |   
+|   Marketing Associate    |    725199   |   
+|   IT    |    604404   |   
+|   Manager    |    545632   |   
+|   Warehouse Associate    |    651809   |   
+|   Sales Associate    |    589784   |   
+|   Data Scientist    |    693894   |   
+|   Graphic Designer    |    664636   |   
+|   Driver    |    582098   |   
+|   Software Engineer    |    724466   |   
+The above example summarizes the total bonus paid for each position.
+
+The following example displays the total bonus per gender:
+```` sql
+SELECT gender, SUM(bonus) AS TotalBonus
+FROM GenderPay
+GROUP BY gender;
+````
+#### Result:
+| Gender       |  Total Bonus |
+|--------------| ------------:|
+|   Male    |    3437323   |   
+|   Female    |    3030121   |   
